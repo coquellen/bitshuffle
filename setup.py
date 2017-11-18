@@ -63,6 +63,9 @@ if sys.platform == 'darwin':
 elif sys.platform.startswith('freebsd'):
     FALLBACK_CONFIG['include_dirs'] += ['/usr/local/include']  # homebrew
     FALLBACK_CONFIG['library_dirs'] += ['/usr/local/lib']      # homebrew
+elif sys.platform.startswith('linux'):
+    FALLBACK_CONFIG['include_dirs'] += ['/usr/include/hdf5/serial'] 
+    FALLBACK_CONFIG['library_dirs'] += ['/usr/lib/x86_64-linux-gnu']      # homebrew
 
 FALLBACK_CONFIG['include_dirs'] = [d for d in FALLBACK_CONFIG['include_dirs']
                                    if path.isdir(d)]
